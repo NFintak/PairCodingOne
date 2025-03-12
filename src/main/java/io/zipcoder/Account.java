@@ -9,6 +9,8 @@ public abstract class Account {
     private double checkingAcct = 0.0;
     private double savingsAcct = 0.0; //don't worry abt interest rate for now
     private double investmentAcct = 0.0; //don't worry abt interest rate for now
+    private double investmentRate = 0.0;
+    private double savingsRate = 0.0;
     private Boolean overdraftToggle;
 
     public Account(String acctHolder, Integer acctNum) {
@@ -18,6 +20,8 @@ public abstract class Account {
         this.checkingAcct = checkingAcct;
         this.savingsAcct = savingsAcct;
         this.investmentAcct = investmentAcct;
+        this.investmentRate = investmentRate;
+        this.savingsRate = savingsRate;
         this.overdraftToggle = true;
     }
     //getters and setters for identifying info
@@ -59,6 +63,14 @@ public abstract class Account {
         return String.format("Checking account balance: %.2s", this.checkingAcct);
     }
 
+    public void setSavingsRate(double savingsRate) {
+        this.savingsRate = savingsRate;
+    }
+
+    public double getSavingsRate() {
+        return this.savingsRate;
+    }
+
     public void depositSavings(double amount) {
 
     }
@@ -69,6 +81,14 @@ public abstract class Account {
 
     public String getSavingsBalance() {
         return String.format("Savings account balance: %.2s", this.savingsAcct);
+    }
+
+    public void setInvestmentRate(double investmentRate) {
+        this.investmentRate = investmentRate;
+    }
+
+    public double getInvestmentRate() {
+        return this.investmentRate;
     }
 
     public void depositInvestment(double amount) {
