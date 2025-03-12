@@ -1,0 +1,15 @@
+Class Interest{
+/* For interest, what I want to do, is include calculated compound interest from Principle within the savings account. The equation is below, denoted in single letters, later determined from Nate’s variable names relating to the account. */
+
+Variables are:
+amount = amount after interest paid at the end of the statement period.
+savingsAcct = Principle deposit/beginning statement period savings account balance. = 200,000
+savingsRate = Compound Interest Rate —> 2% APY
+time = 365 Days 
+Compound Interest Dollars earned:  savingsAcct * (rate/time) = 10.39589041096 = savingsRate
+Notes:
+
+Time is equivalent to a month of time. However, interest is calculated daily until the statement period is over. In other words…
+	amount = savingsAcct * (savingsRate / time)
+	amount = 200,010.9589041096 —> End of month balance
+}

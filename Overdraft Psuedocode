@@ -1,0 +1,31 @@
+Class Overdraft{
+ /*`What I’m looking for, is that if the transaction, particularly with debit card transactions, is over $200. And, if it is, then we find out if it overdraws the account?
+Q1: Is the debit card transaction $200 or more?
+	•	If yes: Then review if the account holder has opted-in Reg E. 
+	⁃	If yes: Then the debit card transaction is declined
+	⁃	If no: Then the debit card transaction debits $200 from the checking account, thus overdrawing the account.
+	•	If no: Communicate with account holder via either email or text message, that their checking acct overdrawn. */
+
+	1.	Is the transaction a debit card transaction?
+	⁃	If yes - next step.
+	⁃	1a. if no: Is this an ACH transaction?
+	⁃	If yes: Skip to step 4
+	⁃	If no: exit.
+	2.	Is the transaction from the checking account? (Do we even want to include this? I only ask because a Money Market account can use a debit card.)
+	⁃	If yes - Next Step
+	⁃	If no - Exit
+	3.	Is the transaction $200 or more?
+	⁃	If true: next step
+	⁃	3b. If no: Is the account still overdrafted?
+	⁃	If yes: Notify the customer.
+	⁃	If no: Exit.
+	4.	Is the account overdrawn as a result?
+	⁃	True: Notify the customer by either email or text message (Phone number).
+	⁃	False: Exit.
+	5.	Has the customer opted-in Reg-E?
+	⁃	If yes: Then do not allow the transaction to go through.
+	⁃	If no: Then the debit card transaction debits $200 or more from the checking account, thus overdrawing the account.
+	6.	Is there enough money in the savings account to be able to cover the overdrawn amount from the checking account?
+	⁃	If yes: Move the money from the savings account into the checking account to be able to cover the balance and make the checking account balance $0.
+	⁃	If no: Notify customer to deposit money into the account by 24 hours or an overdraft fee will be implemented ($35).
+}
