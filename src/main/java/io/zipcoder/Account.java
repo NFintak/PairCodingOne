@@ -34,7 +34,7 @@ public abstract class Account {
     public void setOverdraftPermission(Boolean overdraftToggle) {
         this.overdraftToggle = !overdraftToggle;
     }
-    public String isOverdraftAllowed() {
+    public String isOverdraftAllowed() { //I suggest that we make a serperate class for Overdraft.
         if (this.overdraftToggle == true) {
             return "Your account allows overdraft";
         } else {
