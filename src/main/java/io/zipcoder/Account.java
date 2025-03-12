@@ -18,7 +18,9 @@ public abstract class Account {
         this.checkingAcct = 0.0;
         this.savingsAcct = 0.0;
         this.investmentAcct = 0.0;
+        this.overdraftToggle = true;
     }
+    //getters and setters for identifying info
     public String getAcctHolder() {
         return this.acctHolder;
     }
@@ -28,7 +30,7 @@ public abstract class Account {
     public Integer getAcctNum() {
         return this.acctNum;
     }
-
+    //getter and setter for overdraft
     public void setOverdraftPermission(Boolean overdraftToggle) {
         this.overdraftToggle = !overdraftToggle;
     }
