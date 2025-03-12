@@ -9,6 +9,7 @@ public abstract class Account {
     private double checkingAcct; //don't worry abt interest rate for now
     private double savingsAcct; //don't worry abt interest rate for now
     private double investmentAcct; //don't worry abt interest rate for now
+    private Boolean overdraftToggle;
 
     public Account(String acctHolder, Integer acctNum) {
         this.acctHolder = acctHolder;
@@ -17,6 +18,26 @@ public abstract class Account {
         this.checkingAcct = 0.0;
         this.savingsAcct = 0.0;
         this.investmentAcct = 0.0;
+    }
+    public String getAcctHolder() {
+        return this.acctHolder;
+    }
+    public void setAcctHolder(String acctHolder) {
+        this.acctHolder = acctHolder;
+    }
+    public Integer getAcctNum() {
+        return this.acctNum;
+    }
+
+    public void setOverdraftPermission(Boolean overdraftToggle) {
+        this.overdraftToggle = !overdraftToggle;
+    }
+    public String isOverdraftAllowed() {
+        if (this.overdraftToggle == true) {
+            return "Your account allows overdraft";
+        } else {
+            return "Your account does not allow overdraft";
+        }
     }
 
 
