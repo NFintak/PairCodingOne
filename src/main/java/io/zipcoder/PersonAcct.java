@@ -3,9 +3,9 @@ package io.zipcoder;
 public class PersonAcct extends Account {
     private String lastName;
     private String email;
-    private Integer phoneNumber;
+    private String phoneNumber;
 
-    public PersonAcct(String acctHolder, Integer acctNum, String lastName, String email, Integer phoneNumber) {
+    public PersonAcct(String acctHolder, Integer acctNum, String lastName, String email, String phoneNumber) {
         super(acctHolder, acctNum);
         this.lastName = lastName;
         this.email = email;
@@ -16,22 +16,16 @@ public class PersonAcct extends Account {
         super(acctHolder, acctNum);
         this.lastName = lastName;
         this.email = "";
-        this.phoneNumber = null;
+        this.phoneNumber = "";
     }
 
     public PersonAcct(String acctHolder, Integer acctNum, String lastName, String email) {
         super(acctHolder, acctNum);
         this.lastName = lastName;
         this.email = email;
-        this.phoneNumber = null;
+        this.phoneNumber = "";
     }
 
-    public PersonAcct(String acctHolder, Integer acctNum, String lastName, Integer phoneNumber) {
-        super(acctHolder, acctNum);
-        this.lastName = lastName;
-        this.email = "";
-        this.phoneNumber = phoneNumber;
-    }
 
     public String getLastName() {
         return this.lastName;
@@ -49,11 +43,11 @@ public class PersonAcct extends Account {
         this.email = email;
     }
 
-    public Integer getPhoneNumber() {
+    public String getPhoneNumber() {
         return this.phoneNumber;
     }
 
-    public void setPhoneNumber(Integer phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 }
