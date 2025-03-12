@@ -3,21 +3,25 @@ import java.util.ArrayList;
 
 public abstract class Account {
     public String acctHolder;
-    private double balance;
+    private double totalBalance = 0.0;
     final public Integer acctNum;
-    private ArrayList<String> transactionHistory; //make separate class to store info
-    private double checkingAcct; //don't worry abt interest rate for now
-    private double savingsAcct; //don't worry abt interest rate for now
-    private double investmentAcct; //don't worry abt interest rate for now
+    private ArrayList<String> transactionHistory; //make separate class to store info?
+    private double checkingAcct = 0.0;
+    private double savingsAcct = 0.0;
+    private double investmentAcct = 0.0;
+    private double investmentRate = 0.01; //subject to change
+    private double savingsRate = 0.01; //subject to change
     private Boolean overdraftToggle;
 
     public Account(String acctHolder, Integer acctNum) {
         this.acctHolder = acctHolder;
         this.acctNum = acctNum;
-        this.balance = 0.0;
-        this.checkingAcct = 0.0;
-        this.savingsAcct = 0.0;
-        this.investmentAcct = 0.0;
+        this.totalBalance = totalBalance;
+        this.checkingAcct = checkingAcct;
+        this.savingsAcct = savingsAcct;
+        this.investmentAcct = investmentAcct;
+        this.investmentRate = investmentRate;
+        this.savingsRate = savingsRate;
         this.overdraftToggle = true;
     }
     //getters and setters for identifying info
@@ -41,6 +45,61 @@ public abstract class Account {
             return "Your account does not allow overdraft";
         }
     }
+    //getter for balance
+    public String getBalance() {
+        this.totalBalance = this.checkingAcct + this.savingsAcct + this.investmentAcct;
+        return String.format("Total balance: %.2s", this.totalBalance);
+    }
 
+    public void depositChecking(double amount) {
 
+    }
+
+    public void withdrawalChecking(double amount) {
+
+    }
+
+    public String getCheckingBalance() {
+        return String.format("Checking account balance: %.2s", this.checkingAcct);
+    }
+
+    public void setSavingsRate(double savingsRate) {
+        this.savingsRate = savingsRate;
+    }
+
+    public double getSavingsRate() {
+        return this.savingsRate;
+    }
+
+    public void depositSavings(double amount) {
+
+    }
+
+    public void withdrawalSavings(double amount) {
+
+    }
+
+    public String getSavingsBalance() {
+        return String.format("Savings account balance: %.2s", this.savingsAcct);
+    }
+
+    public void setInvestmentRate(double investmentRate) {
+        this.investmentRate = investmentRate;
+    }
+
+    public double getInvestmentRate() {
+        return this.investmentRate;
+    }
+
+    public void depositInvestment(double amount) {
+
+    }
+
+    public void withdrawalInvestment(double amount) {
+
+    }
+
+    public String getInvestmentBalance() {
+        return String.format("Investment account balance: %s.2", this.investmentAcct);
+    }
 }
