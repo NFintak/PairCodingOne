@@ -2,21 +2,21 @@ package io.zipcoder;
 import java.util.ArrayList;
 
 public abstract class Account {
-    public  String acctHolder;
+    public String acctHolder;
     private double balance;
-    public Integer acctNum;
-    private ArrayList<String> transactionHistory;
-    private double checkingAcct;
-    private double savingsAcct;
-    private double investmentAcct;
+    final public Integer acctNum;
+    private ArrayList<String> transactionHistory; //make separate class to store info
+    private double checkingAcct; //don't worry abt interest rate for now
+    private double savingsAcct; //don't worry abt interest rate for now
+    private double investmentAcct; //don't worry abt interest rate for now
 
-    public Account(String acctHolder, Integer accountNum) {
+    public Account(String acctHolder, Integer acctNum) {
         this.acctHolder = acctHolder;
         this.acctNum = acctNum;
         this.balance = 0.0;
-        this.checkingAcct = checkingAcct;
-        this.savingsAcct = savingsAcct;
-        this.investmentAcct = investmentAcct;
+        this.checkingAcct = 0.0;
+        this.savingsAcct = 0.0;
+        this.investmentAcct = 0.0;
     }
 
 
