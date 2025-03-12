@@ -7,10 +7,10 @@ public abstract class Account {
     final public Integer acctNum;
     private ArrayList<String> transactionHistory; //make separate class to store info?
     private double checkingAcct = 0.0;
-    private double savingsAcct = 0.0; //don't worry abt interest rate for now
-    private double investmentAcct = 0.0; //don't worry abt interest rate for now
-    private double investmentRate = 0.0;
-    private double savingsRate = 0.0;
+    private double savingsAcct = 0.0;
+    private double investmentAcct = 0.0;
+    private double investmentRate = 0.01; //subject to change
+    private double savingsRate = 0.01; //subject to change
     private Boolean overdraftToggle;
 
     public Account(String acctHolder, Integer acctNum) {
